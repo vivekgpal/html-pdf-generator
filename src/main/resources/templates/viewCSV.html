@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<table style="border-collapse: collapse; width: 100%; height: 134.344px;margin-top:30px;font-size:12px">
+
+    <thead>
+    <tr style="height: 22.3906px;">
+        <td style="height: 22.3906px; background-color: rgb(141, 198, 63);"></td>
+        <td style="height: 22.3906px; padding: 5px;" colspan="7"><span style="color: rgb(3, 78, 162);font-size:16px;"><strong>SIP/STP/SWP Registration
+              Summary</strong></span><strong></strong></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr style="height: 44.7812px;">
+        <td style="height: 44.7812px; padding: 5px;"></td>
+        <td style="height: 44.7812px; text-align: center; background-color: rgb(221, 221, 220); vertical-align:top; padding: 5px;border-right:2px solid white;">
+            Scheme</td>
+        <td style="height: 44.7812px; text-align: center; background-color: rgb(226, 241, 207); vertical-align: top; padding: 5px;border-right:2px solid white;">
+            Cycle Date</td>
+        <td style="height: 44.7812px;text-align: center; background-color: rgb(221, 221, 220); vertical-align: top; padding: 5px;border-right:2px solid white;">
+            Start Month</td>
+        <td style="height: 44.7812px; text-align: center; background-color: rgb(226,241, 207); vertical-align: top; padding: 5px;border-right:2px solid white;">
+            End Month </td>
+        <td style="height: 44.7812px;text-align: center; background-color: rgb(221, 221, 220); vertical-align: top; padding: 5px;border-right:2px solid white;">
+            Amount </td>
+        <td style="height: 44.7812px; text-align: center; background-color: rgb(226, 241, 207);vertical-align: top; padding: 5px;border-right:2px solid white;">
+            Transaction Type</td>
+        <td style="text-align: center; background-color:rgb(221, 221, 220); height: 44.7812px; vertical-align: top; padding: 5px;border-right:2px solid white;">
+            Target Scheme ( For STP Only)</td>
+        <td style="text-align: center; background-color: rgb(226, 241, 207); vertical-align: top; height:44.7812px; padding: 5px;border-right:2px solid white;">
+            Frequency</td>
+        <td style="text-align: center; background-color: rgb(221, 221,220); vertical-align: top; height: 44.7812px; padding: 5px;">
+            Status</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row : ${csvData}" style="height: 22.3906px;">
+        <td  style="height: 22.3906px; padding: 5px;"></td>
+        <td th:text="${row.fund}" style="height: 22.3906px; padding: 5px;"></td>
+        <td th:text="${row.cycledate}" style="height: 22.3906px; padding: 5px; text-align: center;"></td>
+        <td th:text="${row.startdate}" style="height: 22.3906px; padding: 5px; text-align: center;"></td>
+        <td th:text="${row.enddt}" style="height: 22.3906px; padding: 5px; text-align: center;"></td>
+        <td th:text="${row.amount}" style="height: 22.3906px; padding: 5px; text-align: center;"></td>
+        <td th:text="${row.transactionype}" style="height: 22.3906px; padding: 5px; text-align: center;"></td>
+        <td th:text="${row.targetscheme_stp}" style="height: 22.3906px; padding: 5px; text-align: center;"></td>
+        <td th:text="${row.frequency}" style="height: 22.3906px; padding: 5px; text-align: center;"></td>
+        <td th:text="${row.sip_status}" style="height: 22.3906px; padding: 5px; text-align: center;"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+
+</html>

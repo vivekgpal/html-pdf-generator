@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
@@ -33,10 +34,12 @@ public class CSVService {
                 String[] row = allData.get(i);
                 CSVRow record = new CSVRow(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10]);
                 records.add(record);
+                System.out.println(record);
             }
         } catch (IOException | CsvException e) {
             e.printStackTrace();
         }
+
         return records;
     }
 
@@ -44,6 +47,7 @@ public class CSVService {
         // Generate HTML
         Context context = new Context();
         context.setVariable("csvData", csvData);
+        System.out.println("this is csvData "+csvData);
         String htmlContent = templateEngine.process("viewCSV", context);
 
         // Convert HTML to PDF and write to file

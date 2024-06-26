@@ -1,4 +1,3 @@
-/*
 package com.example.demo1;
 
 import org.springframework.context.annotation.Bean;
@@ -19,4 +18,4 @@ public class AwsS3Config {
                         AwsBasicCredentials.create("your-access-key", "your-secret-key")))
                 .build();
     }
-}*/
+}
